@@ -28,10 +28,26 @@ This tool simply takes two PNG-images, will XOR them and write them to an output
 ## Demo cases
 
 ### Electronic codebook (ECB)
+    # Generate small random key
+    python3 generate_key.py -s  8 8 small_key.png
+    # XOR TUX with the short key
+
+    # Generate good huge random key
+    python3 generate_key.py -s 1024 1024 good_key.png
+
+    # Calculate results
+    python3 xor_images.py -v -a -s tux.png small_key.png tux_XOR_small_key.png
+    python3 xor_images.py -v -a -s tux.png good_key.png tux_XOR_good_key.png
 
 ### One time pad (OTP)
 
-#### Key Reuse
+    # Generate bad huge random key
+    python3 generate_key.py -s -p 0.2 512 512 bad_key.png
 
 #### Not so random key
+
+#### Key Reuse
+
+
+
 
