@@ -36,22 +36,40 @@ This tool simply takes two PNG-images, will XOR them and write them to an output
     python3 generate_key.py -s 128 128 larger_random_key.png
 
     # Calculate results for small key
-    python3 xor_images.py -v -a -s tux.png small_random_key.png tux_XOR_small_key.png
-![Result](/tux_XOR_small_key.png )
+    python3 xor_images.py -v -a -s tux.png small_random_key.png tux_XOR_small_random_key.png
+![Result](/tux_XOR_small_random_key.png )
  
     # Calculate results for bigger key
     python3 xor_images.py -v -a -s tux.png larger_random_key.png tux_XOR_larger_random_key.png
-![Result](/tux_XOR_better_key.png )
+![Result](/tux_XOR_larger_random_key.png )
 
 ### One time pad (OTP)
 
-#### Not so random keys    
+#### Not so random keys   
+    # Use correlated key
+    python3 xor_images.py -v -a -s tux.png correlated_key.png tux_XOR_correlated_key.png
+![Result](/tux_XOR_correlated_key.png )
+
     # Generate huge bad key (more white pixel than black ones)
-    python3 generate_key.py -s -p 0.2 1024 1024 huge_bad_key.png
+    python3 generate_key.py -s -p 0.1 1024 1024 bad_huge_key.png
+    python3 xor_images.py -v -a -s tux.png bad_huge_key.png tux_XOR_bad_huge_key.png
+![Result](/tux_XOR_bad_huge_key.png )
+
+    # Generate huge random key
+    python3 generate_key.py -s 1024 1024 huge_random_key.png
+    python3 xor_images.py -v -a -s tux.png huge_random_key.png tux_XOR_huge_random_key.png
+![Result](/tux_XOR_huge_random_key.png )
 
 #### Key Reuse
+
     # Generate huge random key
-    python3 generate_key.py -s 1024 1024 huge_key.png
+    python3 generate_key.py -s 1024 1024 huge_random_key.png
+    python3 xor_images.py -v -s tux.png huge_random_key.png tux_XOR_huge_random_key.png
+    python3 xor_images.py -v -s crypto.png huge_random_key.png crypto_XOR_huge_random_key.png
+    # Now, XOR both encrypted images
+    python3 xor_images.py -v -a -s tux_XOR_huge_random_key.png crypto_XOR_huge_random_key.png tux_XOR_crypto.png
+![Result](/tux_XOR_crypto.png )
+
 
 
 
