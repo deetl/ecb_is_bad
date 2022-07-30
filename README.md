@@ -6,7 +6,7 @@ A simple demo to demonstrate weaknesses of using ECB or key reuse for OTP
 
 Read this 
 * ECB https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_(ECB)
-*  https://en.wikipedia.org/wiki/One-time_pad
+* OTP https://en.wikipedia.org/wiki/One-time_pad
 
 ### Electronic codebook (ECB)
 
