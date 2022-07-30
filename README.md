@@ -37,7 +37,12 @@ This tool simply takes two PNG-images, will XOR them and write them to an output
 
     # Calculate results
     python3 xor_images.py -v -a -s tux.png small_key.png tux_XOR_small_key.png
+    
+    tux_XOR_good_key.png
+    ![Result](tux_XOR_good_key.png | width=512)
+    
     python3 xor_images.py -v -a -s tux.png good_key.png tux_XOR_good_key.png
+    
 
 ### One time pad (OTP)
 
