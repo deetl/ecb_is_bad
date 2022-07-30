@@ -16,7 +16,10 @@ The disadvantage of using the Electronic codebook ECB is lack of dissufion. This
 
 ### One time pad (OTP)
 
-By definition the most secure encryption algorithm, if you follow some rules. One mistake is using the encryption key twice. Than an attacker can calculate __<cleartext 1> XOS <cleartext 2>__ which might reveal valuable information
+By definition the most secure encryption algorithm, if you follow some rules. 
+
+* One mistake is using the encryption key twice. Than an attacker can calculate __<cleartext 1> XOS <cleartext 2>__ which might reveal valuable information
+* Another one is, if the key is not totally random, structures of the cleatext might be visible in the ciphertext
 
 ## The tool 
 
@@ -27,3 +30,8 @@ This tool simply takes two PNG-images, will XOR them and write them to an output
 ### Electronic codebook (ECB)
 
 ### One time pad (OTP)
+
+#### Key Reuse
+
+#### Not so random key
+
